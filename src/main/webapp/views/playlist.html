@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <!-- add script to check jwt -->
+        <script src="Scripts/playlist-valid.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="Styles/playlist-css.css">
+    </head>
+    <body>
+        <div class="home-container">
+            <!-- Left container| contains field to create playlist and List of playlist -->
+            <div class="left-container">
+                <i class="fa-solid fa-bars hamburger"  id="hamburger-icon-home" type="button" data-bs-toggle="offcanvas" data-bs-target="#home-offcanvas" aria-controls="offcanvasTop"></i>
+            </div>
+            <div class="offcanvas offcanvas-start" id="home-offcanvas" tabindex="-1" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas-header">
+                    <i class="fa-solid fa-bars hamburger"  id="hamburger-icon-offcanvas" type="button"  data-bs-toggle="offcanvas" data-bs-target="#home-offcanvas"  aria-label="Close"></i>
+                    
+                </div>
+                <div class="offcanvas-body">
+                    <div class="create-playlist-div">
+                        <Label for="create-playlist-input-field">Create New PlayList</Label>
+                        <input type="text" placeholder="Enter PlayList Name" id="create-playlist-input-field"> <br>
+                        <button type="button" disabled onclick="requests.createPlayList();checkCreatePlayList()"  id="create-playlist-btn">Create</button>
+                    </div>
+                    <button data-bs-target="#playlist-modal" data-bs-toggle="modal">View PlayLists</button>
+                    
+                </div>
+            </div>   <!--left container ends here-->
+            
+            <!-- modal to display playlist contents -->
+            <div class="modal fade"  id="playlist-modal" tabindex="-1" aria-labelledby="playlist-model" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" id="modal-content">
+                        <div>
+                            <Label for="choose-playlist-btn">Select A PlayList</Label>
+                            <button id="choose-playlist-btn" onclick="showPlayLists()">Choose A PlayList</button>
+                                <div name="Select PlayList" id="select-playlist">
+                                    
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade"  id="confirm-playlist-delete" tabindex="-1" aria-hidden="true" aria-labelledby="confirm-delete" >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <h3>Confirm Delete?</h3>
+                        <button data-bs-toggle="modal" data-bs-target="#playlist-modal" onclick="requests.deletePlayList()">Ok</button>
+                        <button data-bs-toggle="modal" data-bs-target="#playlist-modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right container -->
+            <div class="right-container">
+                <div class="home-nav">
+                    <div>
+                        <i id="home-btn" onclick="goHome()" class="fa-solid fa-house"></i>
+                        
+                    </div>
+                    <div class="home-search-div">
+                        <input type="text" id="home-video-search-input">
+                        <div style="display: none;"  id="search-results-in-playlist">
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <button id="logout-btn" onclick="requests.logout();">Logout</button>
+                    </div>
+                </div>
+                <div class="home-main">
+                    <div class="home-results" >
+                        <div id="home-results">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="video-player" tabindex="-1" aria-hidden="true" aria-labelledby="video-player">
+            <div class="modal-backdrop">
+                <div class="modal-content">
+                    asf
+                </div>
+            </div>
+            
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="Scripts/playlist-js.js"></script>
+        <script src="Scripts/playlist-requests-js.js"></script>
+        
+    </body>
+</html>

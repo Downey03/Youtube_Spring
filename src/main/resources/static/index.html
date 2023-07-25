@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <script src="../Scripts/page-session-validate.js">
+            
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../Styles/global-styles.css">
+        <link rel="stylesheet" href="../Styles/page.css">
+    </head>
+    <body>
+        <div class="index-container">
+            <!-- left container content -->
+            <div class="left-container">
+                <i class="fa-solid fa-bars hamburger"  id="hamburger-home" type="button" data-bs-toggle="offcanvas" data-bs-target="#index-offcanvas" aria-controls="offcanvasTop"></i>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="index-offcanvas" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                        <i class="fa-solid fa-bars hamburger" id="hamburger-offcanvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#index-offcanvas" aria-controls="offcanvasTop"></i>
+                        <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+                    </div>
+                    <div class="offcanvas-body">
+                        <button id="login-modal-trigger-btn" data-bs-toggle="modal" data-bs-target="#login-modal">Login</button>
+                    </div>
+                </div>
+            </div><!--Left container contents ends here-->
+            <!-- Login modal -->
+            <div class="modal fade" id="login-modal" tabindex="-1" aria-hidden="true" aria-labelledby="login-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="login-form">
+                            <table class="login-table">
+                                <tr>
+                                    <td>
+                                        <label for="login-email">E-mail</label>
+                                    </td>
+                                    <td>
+                                        <input type="email"  required id="login-email" name="userEmail" >
+                                    </td>
+                                    <td rowspan="2">
+                                        <input type="submit"  disabled id="login-submit"  />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="password">password</label>
+                                    </td>
+                                    <td>
+                                        <input type="password"  required  id="login-pass" name="password">
+                                    </td>
+                                </tr>
+                            </table>
+                            <h6 id="login-exception"></h6>
+                        </div>
+                        <br>
+                        <button id="signup-modal-trigger-btn">new user? signup now</button>
+                        <!-- <button id="signup-modal-trigger-btn" data-bs-toggle="modal" data-bs-target="#signup-modal">new user? signup</button> -->
+                    </div>
+                </div>
+            </div>
+            <!-- signup modal -->
+            <div class="modal fade" id="signup-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body signup-modal" > <!--change to signup form-->
+                            <div class="pass-check"><h6 id="pass-check"> </h6></div> 
+                            <div class="conf-pass"><h6 id="conf-pass"></h6></div>
+                            <div class="signup-form">
+                                    <label for="name">Name</label> <br>
+                                    <input type="text"  name="name" required id="name"/> <br>
+                                    <label for="email">E-mail</label> <br>
+                                    <input type="email" name="email" required id="email"/> <br>
+                                    <label for="password">Password</label> <br>
+                                    <input type="password" name="password"  required id="password">
+                                    <p id="password-toggle" onclick="togglePassword()">show</p>
+                                    <label for="confirm-password">Confirm Password</label> <br>
+                                    <input type="password" name="confirm-password"  required id="confirm-password">
+                                    <button type="button" class="submit" id="signup-submit" disabled >create</button>
+                                    <h6 id="signup-exception" >asgas</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-container">
+                <div class="index-nav">
+                    <div class="index-search-div">
+                        <input type="text" id="index-video-search-input">
+                        <button id="index-search-btn" onclick="requests.getIndexVideo()">Search</button>
+                    </div>
+                </div>
+                <div class="index-main">
+                    <div class="index-results">
+                        <div id="index-results">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <script src="src/main/webapp/Scripts/index.js "></script>
+        
+    </body>
+</html>

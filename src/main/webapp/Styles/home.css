@@ -1,0 +1,489 @@
+.home-container{
+    background-color: rgb(74, 74,74);
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+}
+
+
+
+#hamburger-icon-home{
+   margin-top: 20px;
+}
+
+.hamburger{
+    
+    font-size: 24;
+    background-color: rgb(219, 219, 219);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+
+.hamburger:hover{
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 1px;
+}
+
+.left-container{
+    text-align: center;
+    min-width: 4%;
+    background-color: red;
+    border-right: 1px solid black;
+}
+
+#home-offcanvas{
+    text-align: center;
+    background-color: red;
+    max-width: 20%;
+}
+
+.btn-close{
+    border: 1px solid black;
+}
+
+.create-playlist-div{
+    padding: 20px;
+    border: solid 2px black;
+    border-radius: 6px;
+    height: 150px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.create-playlist-div~button{
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.create-playlist-div~button:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+#create-playlist-input-field{
+    margin: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+#create-playlist-btn{
+    border-radius: 6px;
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 70px;
+    font-weight: 500;
+}
+
+#create-playlist-btn:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+
+
+#playlists{
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#playlists button{
+    border-radius: 6px;
+    display: block;
+    font-weight: 500;
+    margin: 10px;
+}
+
+#playlists button:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+
+#playlist-modal{
+    position: absolute;
+    /* top: 10%; */
+}
+
+#modal-content>div{
+   margin: 50px;
+}
+
+#modal-content>div>label{
+    font-weight: 600;
+}
+
+#modal-content>div>button{
+    width: 75%;
+}
+
+
+
+#select-playlist::-webkit-scrollbar {
+    display: none;
+  }
+
+  #choose-playlist-btn{
+    border-radius: 6px;
+    font-weight: 500;
+    margin: 5px;
+  }
+
+  #choose-playlist-btn:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+  }
+
+
+  #select-playlist{
+    display: none;
+    margin-top: 5px;
+    position: relative;
+    left: 19.5%;
+    height: 200px;
+    overflow: scroll;
+    text-align: center;
+}
+
+
+#select-playlist div{
+    display: block;
+    width: 75%;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    font-weight: 400;
+}
+
+#select-playlist>div>button{
+    display: inline-block;
+    border: solid black 2px;
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+    min-width:  95%;
+}
+
+.playlist{
+    display: inline-block;
+    border: solid black 2px;
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+    min-width:  95%;
+}
+
+
+#select-playlist button:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+#select-playlist button>div{
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#select-playlist button a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+
+#select-playlist button a:hover{
+    color: white;
+}
+
+#select-playlist>div>svg:hover{
+    cursor: pointer;
+}
+
+/* .search-video-in-playlist{
+    position: sticky;
+    background-color: white;
+    top: 0;
+    border-radius: 6px;
+    z-index: 1;
+    padding: 20px;
+    display: flex;
+    flex:1 2;
+    gap: 10px;
+}
+
+#delete-playlist-btn{
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+#delete-playlist-btn:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+#playlist-video-search-input{
+    width: 70%;
+    border-radius: 4px;
+}
+
+#playlist-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+#playlist-items>div{
+    display: flex;
+    width: 210px;
+}
+
+#playlist-items a{
+    border-radius: 6px;
+    max-width: 210px;
+    padding: 5px;
+    background-color: black;
+    box-shadow: 0px 0px 1px 1px rgb(74, 74,74);
+    text-decoration: none;
+    color: white;
+}
+
+#playlist-items a:hover{
+    color: rgb(79, 182, 255);
+}
+
+#playlist-items img{
+    display: block;
+    max-width: 200px;
+    min-width: 200px;
+} */
+
+.home-nav{
+    padding: 20px 10px;
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    width: 96vw;
+}
+
+#home-btn{
+    color: white;
+    position: relative;
+    left: -130px;
+    font-size: 22;
+}
+
+#home-btn:hover{
+    cursor: pointer;
+    color: rgb(127,127,127);
+}
+
+#home-video-search-input{
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+#home-search-btn{
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+#home-search-btn:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+#logout-btn{
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+#logout-btn:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+.home-main{
+    padding: 20px;
+}
+
+.home-results{
+    border-radius: 6px;
+    padding: 20px;
+    background-color: rgb(235, 235, 235);
+    height: fit-content;
+    width: 100%;
+    margin :auto;
+    
+}
+
+#home-results{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 10px;
+    width: 97%;
+}
+
+#home-results a{
+    text-decoration: none;
+    color: white;
+    width: 210px;
+    border-radius: 6px;
+    margin: 5px;
+    background-color: black;
+    box-shadow: 0 0 1px 2px rgb(77,77,77);
+    padding: 5px;
+    min-width: 210px;
+    max-width: 210px;
+}
+
+#home-results a:hover{
+    color: rgb(64, 64, 221);
+}
+
+#home-results img{
+    display: block;
+    width: 200px;
+}
+
+#search-results-in-playlist{
+    position: absolute;
+    left: 18.5%;
+    top: 50px;
+    background-color: rgba(49, 49, 49,0.7);
+    width: 70%;
+    padding: 8px;
+    border-radius: 6px;
+    z-index: 5;
+}
+
+#search-results-in-playlist button{
+    border-radius: 6px;
+    display: block;
+    width: 95%;
+    margin: auto;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#search-results-in-playlist button:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
+
+#modal-content{
+    position: relative;
+    left: -30%;
+    width: 150%;
+}
+#playlist-items svg:hover{
+    cursor: pointer;
+}
+
+#playlist-items i:hover{
+    cursor: pointer;
+}
+
+#already-found-item{
+    display: none;
+    position: absolute;
+    background-color: black;
+    top: 50px;
+    z-index: 3;
+    padding: 5px 10px;
+    left: 150px;
+    border-radius: 6px;
+    color: white !important;
+    width: 50%;
+    margin: auto;
+    opacity: 0;
+}
+
+#already-found-item:hover{
+    cursor: default;
+}
+
+
+.animate{
+    display: block !important;
+    animation: display;
+    opacity: 1;
+    animation-duration:  3s;
+}
+
+@keyframes display {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#confirm-delete-playlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+#confirm-playlist-delete button{
+    border-radius: 6px;
+    display: block;
+    width: 95%;
+    margin: auto;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#confirm-playlist-delete h3{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#confirm-playlist-delete button:hover{
+    cursor: pointer;
+    transition: 0.2s;
+    color: azure;
+    background-color: rgb(127,127,127);
+    border: solid black 2px;
+}
