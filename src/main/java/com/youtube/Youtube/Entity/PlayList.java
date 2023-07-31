@@ -1,6 +1,8 @@
 package com.youtube.Youtube.Entity;
 
+import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Index;
+import com.googlecode.objectify.annotation.Parent;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +18,7 @@ import org.springframework.data.annotation.Id;
 @Builder
 public class PlayList {
     @Id
-            @com.googlecode.objectify.annotation.Id
+    @com.googlecode.objectify.annotation.Id
     String playListId;
 
     @Index
@@ -25,5 +27,8 @@ public class PlayList {
     @Index
     String userId;
 
+//    @Parent
+//    @Index
+//    Ref<User> user;
 
 }

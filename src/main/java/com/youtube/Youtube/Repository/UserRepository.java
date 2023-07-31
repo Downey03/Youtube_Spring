@@ -11,4 +11,7 @@ public interface UserRepository extends DatastoreRepository<User,String> {
 
     @Query("Select * from User where userEmail = @userEmail")
     User findByUserEmail(@Param("userEmail") String userEmail);
+
+    @Query("select * from User where userEmail = @userEmail")
+    Boolean findExistingUser(@Param("userEmail") String userEmail);
 }

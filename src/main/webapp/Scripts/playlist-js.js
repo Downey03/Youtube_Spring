@@ -23,6 +23,7 @@ let currentPlayListVideoTitle = [];
 function getCurrentPlayListName(){
     let searchParams = new URLSearchParams(window.location.search);
     currentPlayListName = searchParams.get("playListName")
+    document.querySelector("#current-playlist").textContent = currentPlayListName
 }
 
 getCurrentPlayListName()

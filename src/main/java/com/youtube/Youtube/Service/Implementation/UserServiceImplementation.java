@@ -24,6 +24,7 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public String createUser(UserDTO userDTO) {
+
         User user = User.builder()
                 .userEmail(userDTO.getUserEmail())
                 .userId(UUID.randomUUID().toString())

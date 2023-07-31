@@ -16,7 +16,7 @@ import org.springframework.data.annotation.Id;
 @Entity(name = "PlayListItemMap")
 public class PlayListItemMap {
     @Id
-            @com.googlecode.objectify.annotation.Id
+    @com.googlecode.objectify.annotation.Id
     String playListItemMapId;
     @Index
     String playListId;

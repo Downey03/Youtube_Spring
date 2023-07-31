@@ -9,13 +9,12 @@ homeVideoSearchInput.addEventListener('keyup',function(e){
 
 const writeFunctions = {
 
-    writeHomeVideo : function(data,element){
+    writeHomeVideo : async function(data,element){
 
         let writeData = "";
-        
 
-        let newEl = document.getElementById("home-results")
-        console.log(newEl)
+
+        let newFrag = document.createDocumentFragment()
         data.forEach(obj => {
             let aTag = document.createElement("a");
             let imgTag = document.createElement("img")
@@ -24,18 +23,16 @@ const writeFunctions = {
             imgTag.setAttribute("src",`${obj.videoThumbnail}`)
             text.textContent = `${obj.videoTitle}`;
             aTag.append(imgTag,text)
-            newEl.append(aTag)
-            
-            
+            newFrag.append(aTag)
         })
+//        console.log(newFrag)
 
-        console.log(newEl)
-        // data.forEach(obj => {
-        //     writeData=writeData+`
-        //         <a href="${obj.videoLink}">
-        //             <img src="${obj.videoThumbnail}">
-        //             ${obj.videoTitle}
-        //         </a>`})
+//        data.forEach(obj => {
+//            writeData=writeData+`
+//                <a href="${obj.videoLink}">
+//                    <img src="${obj.videoThumbnail}">
+//                    ${obj.videoTitle}
+//                </a>`})
 
 //        for(x in data){
 //            writeData = writeData+`
@@ -45,7 +42,8 @@ const writeFunctions = {
 //                </a>`;
 //        }
 
-        element.innerHTML = writeData;
+//        element.innerHTML = writeData;
+        element.append(newFrag)
     },
     writeHomeVideoNotFound : function(element){
         let writeData = "<h3>No Video Found</h3>";

@@ -170,4 +170,16 @@ public class PlayListServiceImplementation implements PlayListService {
 
         return getPlayList(playListDTO,playList);
     }
+
+    public void updatePlayListName(PlayListDTO playListDTO){
+
+        PlayList playList = ObjectifyInitializer.ofy().load().type(PlayList.class)
+                .filter("playListName",playListDTO.playListName)
+                .filter("userId",playListDTO.userId).first().now();
+
+        playList.setPlayListName(playListDTO.newName);
+
+        System.out.println(playList);
+        ObjectifyInitializer.ofy().save().entity(playList);
+    }
 }

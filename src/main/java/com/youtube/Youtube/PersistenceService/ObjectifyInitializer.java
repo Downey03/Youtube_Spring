@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.servlet.ServletContextListener;
 
 @Configuration
-public class ObjectifyInitializer implements ServletContextListener {
+public class ObjectifyInitializer  {
 
     public ObjectifyInitializer(){
         ObjectifyService.init();

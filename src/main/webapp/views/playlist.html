@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="Styles/playlist-css.css">
     </head>
     <body>
+
+        
         <div class="home-container">
             <!-- Left container| contains field to create playlist and List of playlist -->
             <div class="left-container">
@@ -19,6 +21,11 @@
                     
                 </div>
                 <div class="offcanvas-body">
+                    <div class="change-playlist-name">
+                        <h3 id="current-playlist">playlist1 </h3><br>
+                        <input id="new-playlist-name" placeholder="Enter New Name" type="text" ><br>
+                        <button disabled id="new-playlist-btn"  >Change PlayList Name</button>
+                    </div>
                     <div class="create-playlist-div">
                         <Label for="create-playlist-input-field">Create New PlayList</Label>
                         <input type="text" placeholder="Enter PlayList Name" id="create-playlist-input-field"> <br>

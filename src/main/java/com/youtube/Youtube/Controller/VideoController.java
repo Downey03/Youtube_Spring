@@ -1,6 +1,7 @@
 package com.youtube.Youtube.Controller;
 
 import Utilities.Utils;
+import com.google.common.hash.HashCode;
 import com.google.gson.Gson;
 import com.youtube.Youtube.DTO.PlayListDTO;
 import com.youtube.Youtube.DTO.SearchDTO;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Arrays;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/video")
@@ -33,8 +35,6 @@ public class VideoController {
 
         SearchDTO searchDto = new SearchDTO(searchKeyword);
         HttpSession session = req.getSession();
-
-
 
         PlayListDTO playListDTO;
         if(searchDto != null && searchDto.getSearchKeyword() != null && !searchDto.getSearchKeyword().trim().equals("")) {

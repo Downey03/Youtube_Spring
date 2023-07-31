@@ -72,8 +72,6 @@ const writeFunctions = {
         writeDocument.innerHTML = writeData
         
     }
-
-
 }
 
 
@@ -316,6 +314,33 @@ const requests = {
     
 }
 
+let changePlayListName = document.getElementById("new-playlist-name")
+let changeCurrentPlayListBtn = document.getElementById("new-playlist-btn")
+changePlayListName.addEventListener('input',function(){
+
+    if(!playLists.includes(changePlayListName.value) && changePlayListName.value.length>=3) {changeCurrentPlayListBtn.disabled = false}
+    else {changeCurrentPlayListBtn.disabled = true }
+
+})
+
+
+changeCurrentPlayListBtn.onclick = async function(){
+    let newName = document.querySelector("#new-playlist-name").value
+    let oldName = document.querySelector("#current-playlist").textContent 
+    document.querySelector("#current-playlist").textContent = newName
+    currentPlayListName = newName
+    
+    for(x in playLists){
+        if(playLists[x]==oldName){
+            playLists.splice(x,1,newName)
+        }
+    }
+    await fetch(`${url}playlist/update?playListName=${oldName}&newName=${newName}`,{
+        method : "PUT"
+    })
+    window.location.assign(`${url}playlist?playListName=${newName}`)
+
+}
 
 requests.getPlayListVideo()
 

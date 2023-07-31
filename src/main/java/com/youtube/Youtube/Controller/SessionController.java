@@ -1,6 +1,11 @@
 package com.youtube.Youtube.Controller;
 
 import com.google.api.Http;
+import com.googlecode.objectify.Ref;
+import com.youtube.Youtube.DTO.PlayListDTO;
+import com.youtube.Youtube.Entity.PlayList;
+import com.youtube.Youtube.Entity.User;
+import com.youtube.Youtube.PersistenceService.ObjectifyInitializer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -64,16 +69,23 @@ public class SessionController {
         return "sign-up";
     }
 
-    @RequestMapping("/test")
-    public String indexView(HttpServletRequest req,HttpServletResponse resp){
-        HttpSession session = req.getSession(false);
-        ModelAndView mv = new ModelAndView();
+    @RequestMapping("/test1")
+    public void indexView(@RequestBody PlayListDTO playListDTO){
+        PlayList playList = new PlayList();
+        playList.setPlayListName(playListDTO.playListName);
+        User user = ObjectifyInitializer.ofy().load().type(User.class)
+                .filter("userEmail",playListDTO.userEmail)
+                .first().now();
+        playList.setUserId(user.getUserId());
 
-        Cookie cookie = new Cookie("JSESSIONID",req.getSession().getId());
-//        System.out.println("in test cont"+req.getSession().getId());
-        System.out.println(req.getSession(false).getId());
-        resp.setHeader("JSESSIONID",req.getSession().getId());
-        mv.setViewName("index");
-        return "home";
+        ObjectifyInitializer.ofy().save().entity(playList);
+    }
+
+    @RequestMapping("/test2")
+    public void in(@RequestBody PlayListDTO playListDTO){
+        String userID = playListDTO.userId;
+
+//        PlayList playList = ObjectifyInitializer.ofy().load().type(PlayList.class)
+//                .filter()
     }
 }
